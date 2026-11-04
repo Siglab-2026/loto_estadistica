@@ -287,6 +287,45 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
         }
+.acciones-sorteo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.acciones-sorteo .boton,
+.acciones-sorteo .btn-estadisticas {
+    width: 240px;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.acciones-sorteo .btn-estadisticas {
+    color: #ffffff;
+    background: linear-gradient(135deg, #173d83, #2874ed);
+    border: none;
+    box-shadow: 0 5px 14px rgba(23, 61, 131, 0.20);
+}
+
+.acciones-sorteo .btn-estadisticas:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(23, 61, 131, 0.30);
+    color: #ffffff;
+}
+
     </style>
 
 </head>
@@ -318,20 +357,25 @@
                 </div>
             </div>
 
-            <button id="btnSorteo" class="boton" onclick="iniciarSorteo()">
-                <span aria-hidden="true">▶</span> INICIAR SORTEO
-            </button>
-<a href="{{ url('/estadisticas') }}" class="btn-estadisticas">
-    <span>📊</span> VER ESTADÍSTICAS
-</a>
+          <div class="acciones-sorteo">
 
-            <div class="control-sonido">
-                <button type="button" id="btnSonido" class="boton-sonido"
-                        aria-pressed="true" title="Silenciar efectos de sonido">
-                    <span id="iconoSonido" aria-hidden="true">🔊</span>
-                    <span id="textoSonido">Sonido activado</span>
-                </button>
-            </div>
+    <button id="btnSorteo" class="boton" onclick="iniciarSorteo()">
+        <span aria-hidden="true">▶</span> INICIAR SORTEO
+    </button>
+
+    <a href="{{ url('/estadisticas') }}" class="btn-estadisticas">
+        <span aria-hidden="true">📊</span> VER ESTADÍSTICAS
+    </a>
+
+</div>
+
+<div class="control-sonido">
+    <button type="button" id="btnSonido" class="boton-sonido"
+            aria-pressed="true" title="Silenciar efectos de sonido">
+        <span id="iconoSonido" aria-hidden="true">🔊</span>
+        <span id="textoSonido">Sonido activado</span>
+    </button>
+</div>
 
             <p id="mensaje" role="status" aria-live="polite">
                 Pulsa el botón para comenzar.
