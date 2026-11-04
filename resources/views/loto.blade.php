@@ -321,6 +321,9 @@
             <button id="btnSorteo" class="boton" onclick="iniciarSorteo()">
                 <span aria-hidden="true">▶</span> INICIAR SORTEO
             </button>
+<a href="{{ url('/estadisticas') }}" class="btn-estadisticas">
+    <span>📊</span> VER ESTADÍSTICAS
+</a>
 
             <div class="control-sonido">
                 <button type="button" id="btnSonido" class="boton-sonido"
