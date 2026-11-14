@@ -367,6 +367,9 @@
         <span aria-hidden="true">📊</span> VER ESTADÍSTICAS
     </a>
 
+    <a href="{{ route('pronostico.index') }}" class="boton">
+    Pronósticos
+</a>
 </div>
 
 <div class="control-sonido">

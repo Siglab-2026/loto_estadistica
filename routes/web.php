@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SorteoController;
+use App\Http\Controllers\PronosticoController;
 use App\Models\Sorteo;
 
 #Route::get('/', function () {
@@ -34,3 +35,20 @@ Route::get('/estadisticas/analisis-digitos', [SorteoController::class, 'analisis
 Route::get('/estadisticas/serie-temporal', [SorteoController::class, 'serieTemporal']);
 
 Route::get('/estadisticas/distribucion', [SorteoController::class, 'distribucion']);
+
+
+
+Route::get('/pronostico/generar', [PronosticoController::class, 'generar'])
+    ->name('pronostico.generar');
+
+    Route::get('/pronostico', function () {
+    return view('pronostico');
+})->name('pronostico.index');
+
+Route::get('/pronostico/historial', [PronosticoController::class, 'historial'])
+    ->name('pronostico.historial');
+
+    Route::post('/pronostico/evaluar', [PronosticoController::class, 'evaluar'])
+    ->name('pronostico.evaluar');
+
+    

@@ -22,6 +22,8 @@ class SorteoController extends Controller
             'numero' => $numero,
         ]);
 
+app(\App\Http\Controllers\PronosticoController::class)->evaluar();
+
         return response()->json([
             'id' => $sorteo->id,
             'numero' => str_pad((string) $sorteo->numero, 2, '0', STR_PAD_LEFT),
